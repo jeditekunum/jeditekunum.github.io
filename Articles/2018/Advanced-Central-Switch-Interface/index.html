@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml">
+ <head>
+
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+   
+	
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="robots" content="index, follow" />
+		<meta name="generator" content="RapidWeaver" />
+		<link rel="icon" href="https://jeditekunum.github.io/favicon.ico" type="image/x-icon" />
+		<link rel="shortcut icon" href="https://jeditekunum.github.io/favicon.ico" type="image/x-icon" />
+		<!-- User defined head content such as meta tags and encoding options -->
+	<title>Advanced Central Switch Interface | Jedi Tek'Unum</title>
+	
+	<!-- Google's Font service -->		
+	<link href='https://fonts.googleapis.com/css?family=Raleway:400|Ruluko|Open%20Sans%20Condensed:300|Bree%20Serif|?rwcache=625693128' rel='stylesheet' type='text/css'>  
+	<!-- Awesome Font - Icons -->  
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css"> 
+		   		   
+	<link rel="stylesheet" type="text/css" media="all" href="https://jeditekunum.github.io/rw_common/themes/lander/consolidated.css" />
+		
+	
+	
+	<!-- Style variations - these are set up in the theme.plist -->
+	<!-- User defined styles -->
+			
+	 <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> -->
+	 <!-- jquery 1.11.0 embedded -->
+	 <script type="text/javascript" src="https://jeditekunum.github.io/rw_common/themes/lander/js/jquery.min.js"></script>	  
+     <script type="text/javascript" src="https://jeditekunum.github.io/rw_common/themes/lander/javascript.js"></script>
+	 <script type="text/javascript" src="https://jeditekunum.github.io/rw_common/themes/lander/js/box.js"></script>
+	 <script type="text/javascript" src="https://jeditekunum.github.io/rw_common/themes/lander/js/multithemes.js"></script> 
+	 
+	<!-- User defined javascript -->
+	
+	
+	
+</head>
+	
+<!-- This page was created with RapidWeaver from Realmac Software. http://www.realmacsoftware.com -->
+
+<body>
+<div id="container"><!-- Start container -->	 
+<!--box trigger-->
+<div id="drop" class="togglebox">
+    <i class="fa fa-plus-square-o"></i>
+  </div>
+<div class="clearer"></div>
+ <!--drop nav --> 
+  <div id="accordion"><!-- BOX-->	 
+     <div id="navcontainer_box">
+     <div id="navcontainer_opacity"></div>
+       <div id="navcontainer"><ul><li><a href="../../../" rel="">Home</a></li><li><a href="../../../Articles/" rel="" class="currentAncestor parent">Articles</a><ul><li><a href="../../../Articles/2018/" rel="" class="currentAncestor parent">2018</a><ul><li><a href="../../../Articles/2018/SX1509-Adapter-Adapter/" rel="">SX1509 Adapter Adapter</a></li><li><a href="../../../Articles/2018/Isolated-8-IO-Adapter-Elexol/" rel="">Isolated 8 I/O Adapter for Elexol et al.</a></li><li><a href="../../../Articles/2018/Standard-Connector-for-I2C/" rel="">Standard Connector for I2C</a></li><li><a href="../../../Articles/2018/NanoPi-NEO-Adapter-V3/" rel="">NanoPi NEO Adapter V3</a></li><li><a href="../../../Articles/2018/I2C-Multiplexer-4-V2/" rel="">I2C Multiplexer 4 V2</a></li><li><a href="../../../Articles/2018/SX1509-Isolated-32-SF-V1/" rel="">SX1509 Isolated 32 SF V1</a></li><li><a href="./" rel="" id="current">Advanced Central Switch Interface</a></li></ul></li><li><a href="../../../Articles/2017/" rel="" class="parent">2017</a><ul><li><a href="../../../Articles/2017/Automating-Ceiling-Fans/" rel="">Automating Ceiling Fans</a></li><li><a href="../../../Articles/2017/Automating-Ceiling-Fans-V2/" rel="">Automating Ceiling Fans V2</a></li></ul></li></ul></li><li><a href="../../../offsite/github.html" rel="">Github</a></li><li><a href="../../../sitemap/" rel="">Sitemap</a></li></ul></div>
+      </div>
+    </div><!-- BOX END--> 
+   <div class="clearer"></div>    
+  <div id="headerbox">  
+   <div id="rw-banner-image"> </div>    
+    <div id="banner_grid"></div>        
+      <div id="pageHeader"><!-- Start page header -->
+     <div id="logo"><a href="https://jeditekunum.github.io/"></a></div>
+	  <div id="fade_titles">	
+	   <h1>Jedi Tek'Unum</h1>
+	   <h2>Adventures in Technology</h2></div>
+    </div><!-- End page header -->        
+  <div id="breadcrumbcontainer_box">  
+    <div id="opacity_background"></div>
+     <div id="breadcrumbcontainer">   
+        
+      </div><!-- End breadcrumb -->
+    </div><!-- End breadcrumbcontainer_box -->  
+  </div><!-- End headerbox-->     
+ <div id="global_width">	 	
+	 <div id="contentContainer"><!-- Start main content wrapper -->
+		 <div id="content"><!-- Start content -->
+		   <h1>Advanced Central Switch Interface</h1>
+<h6>April 2018</h6>
+<br>
+
+<h2>Introduction</h2>
+<p>
+This article is an overview of a <i>hardware system</i> I developed to interface a moderately large number (up to 128) of switches
+and LED indicators to any ethernet accessible master automation controller.
+<p>
+I will first give a brief overview and then I will proceed with requirements, analysis, design, and implementation that led me to
+this solution.
+<p>
+Note that I am not a Hardware Engineer by trade. I'm a retired Software Engineer with a long background in electronics and, at
+best, I consider myself an advanced level electronics hobbyist. While I have prototyped, built, and tested the hardware
+you are about to see, I make no guarantees whatsoever. You get a bit more than what you paid for.
+<p>
+The software that I developed has not been publicly released. It is based on a large personally-developed framework, written in C,
+that has evolved for more than 25 years. I will however provide the bare essential information for how to talk to the hardware through
+a Linux application (and at a future date, FreeBSD).
+
+<h2>Brief Overview of the Hardware</h2>
+<p>
+<img src="../../../resources/Articles/2018/Advanced-Central-Switch-Interface/images/IMG_0383.png">
+<p>
+The 3 modules that form the basis of this system.
+
+<ul>
+<li>The brains - <a href="../NanoPi-NEO-Adapter-V3">NanoPi NEO Adapter - V3</a>
+<ul>
+<li>1.2GHz quad-core ARM with 512MB memory and ethernet
+<li>Shown with a NanoHAT OLED module
+</ul>
+<li><a href="../I2C-Multiplexer-4-V2">I2C Multiplexer</a>
+<ul>
+<li>Only needed if you want more than 32 switches & LED indicators
+</ul>
+<li><a href="../SX1509-Isolated-32-SF-V1">SX1509 Isolated 32 Interface</a>
+</ul>
+
+<p>
+The NanoPi exposes a single I2C bus which is then multiplexed into 4 channels, each containing up to 2 interface boards for a maximum
+of 128 switch inputs and 128 LED indicator outputs. Designed with
+<a href="https://www.legrand.us/wattstopper/lighting-control-panel-systems/lighting-integrator/accessories/lvsw-100.aspx">Wattstopper LVSW</a>
+wall switches in mind.
+<p>
+The design supports interrupt-driven switch activity detection. A SX1509 detects whatever change is programmed and generates
+an interrupt that passes through the multiplexer to the CPU. Software must then scan the multiplexer to discover which
+channel(s) have interrupts and then scan each SX1509 to find the pin(s). This allows scaling far beyond what is needed and
+leaves the processor available to implement whatever functionality is desired.
+<p>
+I do not have overall cost to build information. Lots of parts came from my inventory. The NanoPi NEO and heatsink are under $20US
+(in 2018). The board costs from OSHPark are on the individual board pages. A large system is not inexpensive <b>but</b> it is
+cheaper - and far more capable - than anything else on the market.
+<p>
+Note that there is nothing about this design that requires the use of the NanoPi NEO.
+Anything that can talk 3.3V level I2C and a couple of I/O pins can be used. BeagleBone
+Black, Raspberry Pi, or even a simple ARM or AVR board. And, come to think of it, with the right interfaces (like
+an I2C to USB dongle), any computer could be used.
+
+<h2>Requirements</h2>
+<br>
+<h3>New Home Construction</h3>
+<p>
+As my wife and I approach our senior years we are in the process of building our "last"/"forever" home. We intend to live
+there as long as possible - possibly as much as 30 years. I'm disabled and likely to be fully wheelchair bound at some
+point in the future.
+<p>
+Automation has an attraction for many non-disabled people but its importance grows for those of us with limited mobility.
+Even the simplest routine task can become burdensome when repeated. Disabled people confront problems that others would
+simply never think of. Automation can make a huge difference.
+<p>
+The needs combined with knowledge and ability opens up a wealth of possibilities for automation.
+
+<h3>Affordability</h3>
+<p>
+Like most people we have finite resources available to build a dream home and that includes a dream automation system.
+While we are comfortable we are not multi-millionaires! Our choice was either to DIY our automation system or not
+have one.
+
+<h3>Automation Architecture</h3>
+<p>
+Over the length of our stay the technology that underlies our automation will probably evolve and outright be replaced
+several times. With certainty this also means that vendors used for commercial products will change over time.
+<p>
+The "human interfaces" throughout the home will, however, not likely change nearly as much. One can plan on evolution,
+put in lots of conduit, run future-proof wiring, etc but it is still less easy to change dozens of wall switches.
+<p>
+These realities argue for simplicity of the devices scattered around the home in potentially large quantities. So
+the requirement is to keep the brains and complexity in the central wiring closet and keep the many endpoints dumb.
+<p>
+This approach also provides a relatively easy path towards selling the home later. A custom/DIY system will no doubt
+be a hurdle to selling a property. But the dumb focus of switches and other scattered devices makes it a lot easier
+to simply rip out all the DIY stuff and replace with some commercial product that can be professionally supported
+for the next homeowner. I'd even like to think that commercial products will eventually become superior and I will
+replace with them!
+
+<h2>Analysis</h2>
+<br>
+<h3>Available Systems</h3>
+<br>
+<h4>High-End Commercial Systems</h4>
+<p>
+It doesn't take much surveying of the commerical realm to realize that what is considered a "high end" or "advanced"
+residential automation system is not generally so sophisticated. And even worse, they are terribly stagnant and
+rarely advance in any significant way.
+<p>
+It also doesn't take long to realize that they are pretty expensive - mostly requiring a multi-millionaire level of resources.
+Not just for the initial purchase, wiring, and installation, but also for the ongoing "professional" services
+required to keep it going <b>and</b> make any changes desired. In fact, these systems are designed and marketed
+exactly so that they require a professional services model! One has to be significantly below my skill level or
+far beyond my resources to want to pay someone to modify the behavior of a switch on my wall.
+<h4>Mid-Range Commercial (/DIY?) Systems</h4>
+<p>
+There are very few products that fit this category. A couple of years ago I stumbled across <a href="https://www.loxone.com/enus/">
+Loxone</a> and a <a href="https://groups.google.com/forum/#!forum/loxone-english">community of users</a>.
+<p>
+I decided to use Loxone as my master automation controller. I could certainly develop software and
+I could cobble together a mix of commercial and home-brew hardware to reach a better solution. I just don't have the
+time before my home needs a working system.
+<p>
+However, I decided to <b>not</b> drink all the kool-aid. None, or few, Loxone proprietary wall switches. No
+Loxone proprietary wiring (Tree products). None, or few, Loxone proprietary wireless devices. And no proprietary
+dimmers. That all spells lock-in for a long time which just doesn't work for me.
+<p>
+Its become clear to many that Loxone has a strategic direction moving further towards a proprietary
+all-encompassing (at least trying to be) packaged product that will undoubtedly also mean increased
+emphasis on professional installation and services - just like the other high end players. Its been my
+experience, in any field, that a company trying to be and do everything generally results in doing nothing
+well.
+<p>
+When it comes to switch input in moderate numbers, the cost of Loxone rises quicky. I also question the
+scalability of the Loxone "Link", their extension module bus. Its 2 wires. I don't recall the details of
+what is known or suspected as to the protocol but I suspect it is typical of PLC designs in that it is
+a polled bus. While a polled approach has its uses, especially when we are talking about the very fringes
+of any system, it is <b>not</b> something that scales well and in fact is a definite no-no to people like
+me that have developed large scale systems. Its just slow and bloody inefficient. I recall seeing something
+about the minimum polling intervals growing longer in Loxone. This may have just been for specific types of Extensions
+but that is generally a "solution" to a locked hardware design with scalability problems.
+<p>
+For all those reasons, an alternative for switch input is needed. Switch response needs to be fast no matter
+how many switches in the system.
+<h4>Low-End Systems</h4>
+<p>
+Low-end, usually wireless only, mass market commodity systems are out of my scope of interest. I've got a
+moderate sized Insteon setup in my current home; never again.
+
+<h3>Alternatives for Switch Input</h3>
+<p>
+Thanks to community input I became aware of <a href="http://www.elexol.com">Elexol</a> products. Some are using
+them to translate switch input into ethernet packets that are fed to Loxone. As commercial products go, these
+aren't bad. Less expensive than Loxone inputs although the cost adds up when adding appropriate I/O adapters.
+For example (available in the US from <a href="http://www.saelig.com">Saelig</a>):
+
+<ul>
+<li><a href="http://www.elexol.com/IO_Modules/Ether_IO72_TCP.php">Elexol io72</a> ~$155US
+<li><a href="http://www.elexol.com/IO24Accessories/Opto_Input_Board.php">Elexol 8 Opto Input</a> ~$38US
+<li>Several output buffer boards $25-$35US
+</ul>
+
+<p>
+You will find that these are not a great match for the Wattstopper LVSW switches. The Opto Input board requires
+a high signal and thus an external pullup resistor to work with LVSW. The output boards (possibly
+one exception) are wired so they pull to ground.
+<p>
+The io72 has 72 pins total. None of them have any intelligence for LED driving - just on/off (not even PWM). If one
+wanted to use this with individually controllable indicator LEDs on the LVSW, the io72 with 4 input boards and 4 output
+boards would handle 32 switches and 32 LEDs at a cost of approximately $427US or $13+ per switch. A comparable
+maxed-out config would require 4X as much or $1,708US.
+<p>
+As I said, I don't have a complete cost for my design but I'm certain it is significantly less. However,
+given the time and effort involved in design/testing/building/programming, I would rather have purchased a commercial
+product at a resonably higher cost had one been available with good features.
+<p>
+Also consider that the Elexol are all screw terminal connections. Doesn't seem like a big deal unless you
+have a LOT of them to connect!
+<p>
+The end result would be a very basic mapping of I/Os to ethernet. Anything more sophisticated requires
+processing at the other end of the ethernet message.
+<p>
+Taken all together, there has to be a better solution.
+
+<h2>Design</h2>
+<p>
+<h3>My Standard I2C Connector</h3>
+<p>
+Modularity is good! In this case it lets one use whatever CPU is desired and to scale the total number
+of switches as desired. It also allows modules to be used for other purposes.
+<p>
+A modular design needs a way to interconnect the modules. Cost, efficiency, scalability, and availability of
+parts all drive one towards I2C for this application. There are other I2C connector systems out there but
+they all suffer from several problems. These modules are therefore designed to use my
+<a href="../Standard-Connector-for-I2C">Standard Connector for I2C</a>. In addition to I2C connectivity
+this also carries power and reset and interrupt signals.
+<h3>SX1509 I/O Adapter Board</h3>
+<p>
+<a href="../SX1509-Isolated-32-SF-V1">SX1509 Isolated 32 Interface</a>
+<p>
+There are 2 of my I2C bus connectors so that it can be daisy-chained. Since the SX1509 has only 4 possible
+addresses and there are 2 of them on each board, only 2 of these boards can be on the same bus.
+<p>
+This board consists of compromises.
+
+<ul>
+<li>SparkFun SX1509 Adapters
+<ul>
+<li>Sure, I would have preferred a design with the chip right on the board. But I don't have a SMD reflow
+oven and I'm getting old (eyesight and dexterity are fading). All I have is a cheap hot air soldering station.
+I tried a version of the board with the chip directly mounted. Sometimes I was successful, sometimes I wasn't.
+This chip is pretty small! I decided to sacrifice elegance and efficiency.
+</ul>
+<li>DIP Opto Isolators
+<li>SMD LEDs and resistors
+<ul>
+<li>Are small but manageable (1206 size) with a hot air gun. Through hole
+components would have taken up too much space and PCB space isn't free.
+</ul>
+<li>The I/O connectors
+<ul>
+<li>Not as commonly available as screw terminals but will make the job a lot easier and denser
+with these kinds of quantities. They are available from various sellers on eBay and Aliexpress.
+</ul>
+</ul>
+
+This module (only) can be mounted with either the standard 72mm DIN carrier <i>or</i> a typical plastic
+DIN clip. The DIN clip is much more economically since the board is relatively large and there could
+be quite a few of them.
+<p>
+<h3>I2C Multiplexer Board</h3>
+<p>
+<a href="../I2C-Multiplexer-4-V2">I2C Multiplexer</a>
+<p>
+A straightforward I2C multiplexer. Lots of optional configuration options through jumper selection.
+Some of which don't apply to this particular application (for example selectable 3V/5V on each channel).
+<p>
+In the name of space efficiency this also uses a lot of SMD components which are again reasonable
+to deal with (1206 sizes).
+<h3>Brains</h3>
+<p>
+<a href="../NanoPi-NEO-Adapter-V3">NanoPi NEO Adapter - V3</a>
+<p>
+Again I'll emphasize that anything with 3.3V I2C and 2 I/O pins can be used for this application.
+<p>
+I'm an old Unix developer (although not quite <a href="http://dilbert.com/strip/1995-06-24">this</a>). I started
+with big iron and evolved as the industry exploded - both upscale and downscale. I value my time and
+my hard-earned scars and I would rather use the same (resonably) standard ecosystem at any scale. I've played
+with tiny microcontrollers (AVR, ARM, Arduino-class) and a couple of nice RTOS for them (Cosa, Nuttx) but
+despite an enormous amount of work they are... well... still too damn limiting. I want to build the
+applications I need and I can't spend the rest of my life enhancing this kind of thing to do what is
+commonly available elsewhere.
+<p>
+There are only really two areas where those tiny solutions had interest for me. One was cost. The other was
+the low-power aspect which also enables portability. This application has no need for portability or battery
+power. Now pershaps surprisingly, the cost benefit is literally... gone.
+<p>
+Go to AdaFruit - or anywhere else - and look for a small microcontroller. Then add an ethernet interface.
+Take note of the cost.
+<p>
+Now look at the NanoPi NEO. A 1.2GHz quad-core ARM 512MB ethernet module about 2" cubed that runs Linux
+out of the box (and FreeBSD with a little more work). For under $20US with a heatsink. I'll refrain from
+using a flowery word here but why the .... would anyone bother with those tiny crippled things? Granted
+the NEO has specs that look like a bazooka for an ant problem. There will be a lot of resources that
+are just idle or you could put a lot of other smarts on it at the same time.
+
+<h3>Software</h3>
+<p>
+For now all I can offer is a brief review of what you would need to do from a Linux application to
+talk to this hardware. I've prototyped on the Linux that comes installed on the NanoPi NEO so this
+information is currently relative to that. I do intend to switch to FreeBSD and no doubt that will
+be slightly different.
+<h4>GPIO</h4>
+<p>
+There are 2 GPIO pins that can be used to reset the I2C devices and receive interrupts. The ~RESET
+line is driven by GPIOG8 (NEO physical pin 16, software pin 200) and ~INTERRUPT is connected to
+GPIOA6 (NEO physical pin 12, software pin 6). In all the following description the pin involved
+is the <i>software pin</i>.
+<p>
+Linux unfortunately has no callable API to configure GPIO pins. You must write to control pseudo-files to
+interface to the kernel. These examples will show shell commands although your application would
+obviously open the files and write text commands to it.
+<p>
+First you need to <i>export</i> GPIO pins to make them visible to the application:
+<p>
+<code>
+echo 200 >/sys/class/gpio/export
+<br>
+echo 6 >/sys/class/gpio/export
+</code>
+<p>
+after which /sys/class/gpio/gpio200 and /sys/class/gpio/gpio6 will appear.
+<p>
+Then configure 200 for reset and 6 for interrupt:
+<p>
+<code>
+echo 0 >/sys/class/gpio/gpio200/active_low
+<br>
+echo out >/sys/class/gpio/gpio200/direction
+<br><br>
+echo 0 >/sys/class/gpio/gpio6/active_low
+<br>
+echo in >/sys/class/gpio/gpio6/direction
+</br>
+echo falling >/sys/class/gpio/gpio6/edge
+</code>
+<p>
+To reset you simply set the value of software pin 200 to low, wait, and set to high:
+<p>
+<code>
+echo 0 >/sys/class/gpio/gpio200/value
+<br>
+sleep 1
+<br>
+echo 1 >/sys/class/gpio/gpio200/value
+</code>
+<p>
+To receive interrupts /sys/class/gpio/gpio6/value must be kept open and be monitored
+with <code>poll(2)</code> for a <code>POLLPRI</code> event. A read must be done then to consume the interrupt
+event. This doesn't do anything other than notify the application that there was an
+interrupt <i>somewhere</i>; you then have to use I2C to scan the multiplexer and all
+the SX1509 interrupt registers to figure out all the pins that triggered and process
+accordingly. Likewise you have to make sure that the interrupts are cleared in each
+device (if memory is correct the act of reading the register clears the multiplexer
+but depending on how the SX1509 is configured a register write may be required).
+<h4>I2C</h4>
+<p>
+I2C communications is done via <code>ioctl</code> against a file descriptor open for the
+I2C bus. In this application, the NEO only exposes bus 0 so the device is <code>/dev/i2c-0</code>.
+<p>
+To read from a I2C device you fill out <code>struct i2c_msg</code> structure.
+In order to read you must write the device with the register address that you want to start reading from. Then you specify,
+in the second structure of the array, where to put the results. Then this array is referred to by
+<code>struct i2c_rdwr_ioctl_data</code> structure.  Something like this:
+<p>
+<code>
+struct i2c_msg msgs[2];<br>
+struct i2c_rdwr_ioctl_data io;<br>
+<br>
+msgs[0].addr = <i>i2c-device-address-to-read</i>;<br>
+msgs[0].flags = 0;<br>
+msgs[0].len = 1; /* size of register address variable */<br>
+msgs[0].buf = &<i>variable-containing-register-address</i>;<br>
+<br>
+msgs[1].addr = <i>i2c-device-address-to-read</i>; /* again */<br>
+msgs[1].flags = I2C_M_RD;<br>
+msgs[1].len = <i>number-of-bytes-to-read</i>;<br>
+msgs[1].buf = <i>results-buffer</i>;<br>
+<br>
+io.msgs = msgs;<br>
+io.nmsgs = 2;<br>
+<br>
+ioctl(<i>fd</i>, I2C_RDWR, &io);<br>
+</code>
+<p>
+To write to a I2C device you do something similar although with only a single message structure <b>and
+importantly</b> the first byte of data must be the device register to start writing to. Something like this:
+<p>
+<code>
+char bytes[<i>msg-size</i> + 1];<br>
+struct i2c_msg msg;<br>
+struct i2c_rdwr_ioctl_data io;<br>
+<br>
+bytes[0] = <i>i2c-device-register-to-start-write</i>;<br>
+bytes[1...] = <i>...data-to-write</i>;<br>
+<br>
+msg.addr = <i>i2c-device-address-to-write</i>;<br>
+msg.flags = 0;<br>
+msg.len = 1 + <i>msg-size</i>;<br>
+msg.buf = bytes;<br>
+<br>
+io.msgs = &msg;<br>
+io.nmsgs = 1;<br>
+<br>
+ioctl(<i>fd</i>, I2C_RDWR, &io);<br>
+</code>
+<p>
+When using the multiplexer a number of additional issues add to the complexity. First off, the default
+multiplexer specified in this design shares its first two instance I2C addresses (0x70, 0x71) with the
+last two instance addresses of the SX1509. The multiplexer
+never goes away from the I2C address space; it just switches which channel all the <i>other</i> addresses
+are from. So in this design you really need to choose either 0x72 or 0x73 for the multiplexer to be
+able to see all possible SX1509s.
+<p>
+Another issue is that only one channel can be selected at a time. That's pretty obvious <b>but</b> imagine
+application(s) with multiple processes or threads all trying to play with I2C at the same time. For example,
+one implementation might have separate processes (or threads) for switch handling and another for LED
+indicator handling. The selection of the current channel and the operation(s) on the device are not
+atomic. Each sequence must be transactional. Lock the channel selection during the transaction.
+<p>
+In my software I have a separate thread that does nothing but handle hardware interrupts.
+When an interrupt arrives it has to lock the channel selection, probe the multiplexer to discover which channels are interrupting,
+switch channels one-by-one and scan all known devices on the channel looking for interrupting pins. Only
+after the entire tree is examined can the multiplexer be released. As actual interrupting pins are
+found, they are queued up for handling by another thread <b>after</b> the interrupt scan is completed
+(and multiplexer released).
+If your design puts other unrelated I2C devices on the other side of the multplexer
+then you will need a system-wide mulitplexer lock manager.
+
+<h2>Implementation</h2>
+<p>
+The project has turned out better than I expected. And I haven't even begun to program the advanced
+special effects possible with the LED indicators. Switch actions appear at the application with no
+discernible delay. CPU load, as one might expect, is nothing - idle all the time.
+<p>
+I've got a lot more work to do to fully design and implement the software. I have every expectation
+that it will be fairly easy to do some pretty advanced things. Bhaviors that come to mind:
+<p>
+<ul>
+<li>Short tap and long press (could even have multiple durations of long press do different things)
+<li>Multi-tap
+<li>Chords (2 or more pressed at the same time)
+<li>Modes (altering the behavior of other switches; for example, a LVSW to select mode for a DCC2 switch)
+</ul>
+<p>
+And, of course, all that intelligence should result finally in a UDP packet (for example) being sent
+to Loxone or any other automation system.
+<p>
+The thought has also crossed my mind that, along with an ethernet to DMX bridge, this could be a complete
+intelligent lighting system. Or, eventually, a complete Loxone MiniServer replacement.
+<p>
+The use of a *nix base means just about any programming or scripting language can be used. A variety
+of methods are available for communicating with other controllers (even MQTT or IFTTT). And with it
+all a robust programming and debugging environment. Yes, I've even used a graphical source level
+debugger to remotely debug my application on the NEO.
+
+<h2>Conclusion</h2>
+<p>
+This is closer to the kind of product that should be available commercially (note that
+the project schematics and boards are marked as <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/">
+Creative Commons Attribution-NonCommercial-ShareAlike-3.0</a> licensed). Its far from perfect but it will
+do the job.
+		 </div><!-- End content -->
+	 </div><!-- End main content wrapper -->
+  <div id="sidebarBackground"></div>
+<div id="sidebarContainer"><!-- Start Sidebar wrapper -->
+  <div class="sideHeader"></div><!-- Sidebar header -->
+	 <div id="sidebar"><!-- Start sidebar content -->
+	  <!-- sidebar content such as the blog archive links -->
+	 <div class="clearer"></div>
+		<!-- sidebar content you enter in the page inspector -->		
+     </div><!-- End sidebar content -->
+   </div><!-- End sidebar wrapper -->
+ </div><!-- global_width -->
+<div class="clearer"></div>	
+  <div id="footer"><!-- Start Footer -->
+   <div class="footer_breadcrumbcontainer"> </div>
+	  <p>&copy; 2017-2021 Jedi Tek'Unum <a href="#" id="rw_email_contact">Contact Me</a><script type="text/javascript">var _rwObsfuscatedHref0 = "mai";var _rwObsfuscatedHref1 = "lto";var _rwObsfuscatedHref2 = ":we";var _rwObsfuscatedHref3 = "bma";var _rwObsfuscatedHref4 = "ste";var _rwObsfuscatedHref5 = "r@j";var _rwObsfuscatedHref6 = "edi";var _rwObsfuscatedHref7 = "tek";var _rwObsfuscatedHref8 = "unu";var _rwObsfuscatedHref9 = "m.c";var _rwObsfuscatedHref10 = "om";var _rwObsfuscatedHref = _rwObsfuscatedHref0+_rwObsfuscatedHref1+_rwObsfuscatedHref2+_rwObsfuscatedHref3+_rwObsfuscatedHref4+_rwObsfuscatedHref5+_rwObsfuscatedHref6+_rwObsfuscatedHref7+_rwObsfuscatedHref8+_rwObsfuscatedHref9+_rwObsfuscatedHref10; document.getElementById("rw_email_contact").href = _rwObsfuscatedHref;</script></p>
+  </div><!-- End Footer -->
+</div><!-- End container -->
+
+ <div id="up"><a href="#up"><span><i class="fa fa-angle-up"></i></span></a></div>
+
+<!-- trigger options in multithemes.js -->
+<div id="banner_parallax_on_off" class="settings"></div>
+<div id="menuOpened" class="settings"></div>
+<div id="banner_fade_in" class="settings"></div>
+
+<!-- theme by http://www.multithemes.com -->
+</body>
+</html>

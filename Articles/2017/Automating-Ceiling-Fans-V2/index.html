@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml">
+ <head>
+
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+   
+	
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="robots" content="index, follow" />
+		<meta name="generator" content="RapidWeaver" />
+		<link rel="icon" href="https://jeditekunum.github.io/favicon.ico" type="image/x-icon" />
+		<link rel="shortcut icon" href="https://jeditekunum.github.io/favicon.ico" type="image/x-icon" />
+		<!-- User defined head content such as meta tags and encoding options -->
+	<title>Automating Ceiling Fans V2 | Jedi Tek'Unum</title>
+	
+	<!-- Google's Font service -->		
+	<link href='https://fonts.googleapis.com/css?family=Raleway:400|Ruluko|Open%20Sans%20Condensed:300|Bree%20Serif|?rwcache=625693128' rel='stylesheet' type='text/css'>  
+	<!-- Awesome Font - Icons -->  
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css"> 
+		   		   
+	<link rel="stylesheet" type="text/css" media="all" href="https://jeditekunum.github.io/rw_common/themes/lander/consolidated.css" />
+		
+	
+	
+	<!-- Style variations - these are set up in the theme.plist -->
+	<!-- User defined styles -->
+			
+	 <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> -->
+	 <!-- jquery 1.11.0 embedded -->
+	 <script type="text/javascript" src="https://jeditekunum.github.io/rw_common/themes/lander/js/jquery.min.js"></script>	  
+     <script type="text/javascript" src="https://jeditekunum.github.io/rw_common/themes/lander/javascript.js"></script>
+	 <script type="text/javascript" src="https://jeditekunum.github.io/rw_common/themes/lander/js/box.js"></script>
+	 <script type="text/javascript" src="https://jeditekunum.github.io/rw_common/themes/lander/js/multithemes.js"></script> 
+	 
+	<!-- User defined javascript -->
+	
+	
+	
+</head>
+	
+<!-- This page was created with RapidWeaver from Realmac Software. http://www.realmacsoftware.com -->
+
+<body>
+<div id="container"><!-- Start container -->	 
+<!--box trigger-->
+<div id="drop" class="togglebox">
+    <i class="fa fa-plus-square-o"></i>
+  </div>
+<div class="clearer"></div>
+ <!--drop nav --> 
+  <div id="accordion"><!-- BOX-->	 
+     <div id="navcontainer_box">
+     <div id="navcontainer_opacity"></div>
+       <div id="navcontainer"><ul><li><a href="../../../" rel="">Home</a></li><li><a href="../../../Articles/" rel="" class="currentAncestor parent">Articles</a><ul><li><a href="../../../Articles/2018/" rel="" class="parent">2018</a><ul><li><a href="../../../Articles/2018/SX1509-Adapter-Adapter/" rel="">SX1509 Adapter Adapter</a></li><li><a href="../../../Articles/2018/Isolated-8-IO-Adapter-Elexol/" rel="">Isolated 8 I/O Adapter for Elexol et al.</a></li><li><a href="../../../Articles/2018/Standard-Connector-for-I2C/" rel="">Standard Connector for I2C</a></li><li><a href="../../../Articles/2018/NanoPi-NEO-Adapter-V3/" rel="">NanoPi NEO Adapter V3</a></li><li><a href="../../../Articles/2018/I2C-Multiplexer-4-V2/" rel="">I2C Multiplexer 4 V2</a></li><li><a href="../../../Articles/2018/SX1509-Isolated-32-SF-V1/" rel="">SX1509 Isolated 32 SF V1</a></li><li><a href="../../../Articles/2018/Advanced-Central-Switch-Interface/" rel="">Advanced Central Switch Interface</a></li></ul></li><li><a href="../../../Articles/2017/" rel="" class="currentAncestor parent">2017</a><ul><li><a href="../../../Articles/2017/Automating-Ceiling-Fans/" rel="">Automating Ceiling Fans</a></li><li><a href="./" rel="" id="current">Automating Ceiling Fans V2</a></li></ul></li></ul></li><li><a href="../../../offsite/github.html" rel="">Github</a></li><li><a href="../../../sitemap/" rel="">Sitemap</a></li></ul></div>
+      </div>
+    </div><!-- BOX END--> 
+   <div class="clearer"></div>    
+  <div id="headerbox">  
+   <div id="rw-banner-image"> </div>    
+    <div id="banner_grid"></div>        
+      <div id="pageHeader"><!-- Start page header -->
+     <div id="logo"><a href="https://jeditekunum.github.io/"></a></div>
+	  <div id="fade_titles">	
+	   <h1>Jedi Tek'Unum</h1>
+	   <h2>Adventures in Technology</h2></div>
+    </div><!-- End page header -->        
+  <div id="breadcrumbcontainer_box">  
+    <div id="opacity_background"></div>
+     <div id="breadcrumbcontainer">   
+        
+      </div><!-- End breadcrumb -->
+    </div><!-- End breadcrumbcontainer_box -->  
+  </div><!-- End headerbox-->     
+ <div id="global_width">	 	
+	 <div id="contentContainer"><!-- Start main content wrapper -->
+		 <div id="content"><!-- Start content -->
+		   <h1>Automating Ceiling Fans V2</h1>
+<h6>September 2017</h6>
+<br>
+<h4><i><u>WARNING:</u></i></h4>
+<p>
+<i>The following information may not be useful for those with limited experience with electronics and electricity. This is a DIY oriented article but requires basic soldering skills and familiarity with electronics. Most importantly, if you are not experienced with working with 120V AC mains power you should not proceed due to the <b><u>potentially lethal voltages</u></b> involved! If you choose to proceed with using any of the information presented here, the author accepts no responsibility for your use - or misuse. Proceed with caution.</i>
+
+<h2>Previous Version</h2>
+<p>
+Please refer to the article <a href="../Automating-Ceiling-Fans">Automating Ceiling Fans (V1)</a> for an overview of the previous generation of this circuit and an explanation of ceiling fan anatomy. This article assumes you already have that knowledge.
+
+<h2>Version 2</h2>
+<p>
+This version is essentially the same circuit although both the adapter and controller have been combined onto a single board. The adapter portion does not need to be populated if it isn't going to be used. It can also be disabled by removing a jumper. The new version is designed to fit in a DIN case that reduces potential shock hazard and has a more professional appearance.
+
+<h2>Requirements</h2>
+<p>
+The following requirements have led to the design presented here. They are the same as the previous version.
+<ul>
+	<li>Ability to control the speed of AC ceiling fans
+	<li>Adaptable to different fans as much as possible using a variety of components
+	<li>As many as 3 speeds in addition to full on
+	<li>Isolate AC voltage from control circuit
+	<li>Flexible control interface - simple relay or open collector at minimum
+	<li>Optional control via 0-10VDC
+</ul>
+
+<h2>Custom Ceiling Fan Control - V2</h2>
+<p>
+<span style="color:red"><b>Be careful with high voltages!</b></span>
+<p>
+I have designed a circuit and board that allows an automation system to switch in one or more capacitors to control fan speed. You may build one yourself.<br><br>
+<a href="../../../resources/Articles/2017/Automating-Ceiling-Fans-V2/ACFanController_sch.pdf"><img src="../../../resources/Articles/2017/Automating-Ceiling-Fans-V2/images/ACFanController_sch.png"></a>
+<br>
+<p>
+The result looks something like this:
+<br><br>
+<img src="../../../resources/Articles/2017/Automating-Ceiling-Fans-V2/images/IMG_0266.JPG">
+<br><br>
+<img src="../../../resources/Articles/2017/Automating-Ceiling-Fans-V2/images/IMG_0277.JPG">
+
+<h3>Connections</h3>
+<p>
+The AC line in (and neutral) is connected at the top left. The Fan and Reverse (and neutral) are connected at the top right. You may ignore the neutrals and join them elsewhere.
+<p>
+The reversing functionality is limited by the design of most fans. The direction switch in most fans is below the motor and it is generally not possible to install additional wires (or at least very difficult requiring the motor be torn apart). If you wish to control the direction you will likely have to select a fan that includes a light - only to get the additional wire needed to control a 120VAC relay that replaces the switch. The wire run to the fan will need to be 14/3 to provide access to the relay from the controller. The light will no longer be functional.
+<p>
+AC grounds must be joined elsewhere.
+<p>
+The automation system connects at the bottom. On the left is the DC ground, +24VDC supply, and optional 0-10VDC speed control. On the right is DC ground, 4 "speed" selectors, and reverse. You should use only one of the control methods, 0-10VDC <b>or</b> the speed selectors.
+
+<h3>Powering</h3>
+<p>
+The board requires 18-24VDC. Expect less than 100ma @ 24VDC typically.
+
+<h3>Direction Control Method</h3>
+<p>
+If the reversing relay has been installed and connected to the appropriate terminal then pulling pin 6 of the bottom right terminal block to ground will activate the reversing relay. The SSR is optically isolated.
+
+<h3>Selector Speed Control Method</h3>
+<p>
+There are 4 (optically isolated) SSRs that can be independently activated via pulling pins 2-5 of the bottom right terminal block to ground. The first 3 are connected through capacitors. The 4th provides full power to the fan.
+<p>
+Using this method it is up to the individual implementation to choose how much capacitance to use and whether they are aggregated or not. For example, values of 5uF, 10uF, and 15uF could be installed and then only one pin needs to be used to activate the desired speed. Or, values of 5uF, 5uF, and 5uF would obviously all produce the same results if activated individually. Combing any 2 would provide 10uF and any 3 would provide 15uF. This provides a lot of flexibility if your application requires more than 3 speeds.
+
+
+<h3>0-10VDC Speed Control Method</h3>
+<p>
+If you choose to use the optional 0-10VDC control method, the activation of SSRs and capacitors will be cumulative. That is, low will activate #1, medium will activate #1 & #2, high will activate #1 & #2 & #3, and full will activate all 4. Capacitance will be additive.
+<p>
+The chip (LM3924) that does the conversion from 0-10VDC has 10 steps. The top 2 steps, 9 & 10, are not connected. Long cable runs can reduce voltages so it may not be possible to achieve 9V+; plus there is a diode in front. Of the remaining steps, the 8 levels need to be reduced to 4. SSR/capactor #1 can be connected to either step 1 or 2; #2 to step 3 or 4; #3 to step 5 or 6; and #4 to step 7 or 8.
+<p>
+<b>IMPORTANT:</b> You <b>must</b> solder your desired bridging for JP2-JP5 or 0-10V control will <b>not</b> work!
+<p>
+If you bridge #1 to 1, #2 to 3, #3 to 5, and #4 to 7 the control voltages that activate the next level will be roughly 2V, 4V, 6V, and 8V. If you bridge #1 to 2, #2 to 4, #3 to 6, and #4 to 8 the control voltages that activate the next level will be roughly 3V, 5V, 7V, and 9V. This allows a little shifting around if necessary to match your driving circuit. I've configured mine for 3V/5V/7V/9V.
+
+<h3>Parts</h3>
+<p>
+Substitutions can be made for many parts for unique situations. In my implementations I've used the following:
+<ul>
+<li>TDK B32794D3505K capacitors
+<li>G3MC-202P-CD SSRs
+<li>AQH3213 SSR
+<li>TMOV20RP200E MOVs
+<li>R-78E15-0.5 DC-to-DC converter
+<li>MF-R050 resetable fuse
+<li>LM3914 bar graph
+<li>10V zener
+<li>assorted diodes, capacitors, resistors, and LEDs
+<li>BUD DMB-4773 DIN box
+<li>BUD DMB-4773-CC clear window for DIN box
+<li>PCB from <a href="https://oshpark.com/shared_projects/ff1Z4lcX">OSHPark</a> (as of 2017 ~$70 for 3 boards)
+</ul>
+
+<h3>Build Notes</h3>
+<p>
+The only difficulty I had in building was a result of my error in designing the footprint for the MOVs. If you use the MOVs specified above, the leads will be difficult to get through the board - the holes aren't large enough. I was able to get mine in with some finesse. I apologize for the trouble but it wasn't worth tweaking the board design - and testing a board.
+
+<h3>Testing</h3>
+<p>
+I've built 2 of these and tested with a Hunter ceiling fan and a window fan. I tested with 100' of romex between the controller and the fan.
+<p>
+Although everything has worked perfectly, as with any DIY project, your mileage may vary.
+
+		 </div><!-- End content -->
+	 </div><!-- End main content wrapper -->
+  <div id="sidebarBackground"></div>
+<div id="sidebarContainer"><!-- Start Sidebar wrapper -->
+  <div class="sideHeader"></div><!-- Sidebar header -->
+	 <div id="sidebar"><!-- Start sidebar content -->
+	  <!-- sidebar content such as the blog archive links -->
+	 <div class="clearer"></div>
+		<!-- sidebar content you enter in the page inspector -->		
+     </div><!-- End sidebar content -->
+   </div><!-- End sidebar wrapper -->
+ </div><!-- global_width -->
+<div class="clearer"></div>	
+  <div id="footer"><!-- Start Footer -->
+   <div class="footer_breadcrumbcontainer"> </div>
+	  <p>&copy; 2017-2021 Jedi Tek'Unum <a href="#" id="rw_email_contact">Contact Me</a><script type="text/javascript">var _rwObsfuscatedHref0 = "mai";var _rwObsfuscatedHref1 = "lto";var _rwObsfuscatedHref2 = ":we";var _rwObsfuscatedHref3 = "bma";var _rwObsfuscatedHref4 = "ste";var _rwObsfuscatedHref5 = "r@j";var _rwObsfuscatedHref6 = "edi";var _rwObsfuscatedHref7 = "tek";var _rwObsfuscatedHref8 = "unu";var _rwObsfuscatedHref9 = "m.c";var _rwObsfuscatedHref10 = "om";var _rwObsfuscatedHref = _rwObsfuscatedHref0+_rwObsfuscatedHref1+_rwObsfuscatedHref2+_rwObsfuscatedHref3+_rwObsfuscatedHref4+_rwObsfuscatedHref5+_rwObsfuscatedHref6+_rwObsfuscatedHref7+_rwObsfuscatedHref8+_rwObsfuscatedHref9+_rwObsfuscatedHref10; document.getElementById("rw_email_contact").href = _rwObsfuscatedHref;</script></p>
+  </div><!-- End Footer -->
+</div><!-- End container -->
+
+ <div id="up"><a href="#up"><span><i class="fa fa-angle-up"></i></span></a></div>
+
+<!-- trigger options in multithemes.js -->
+<div id="banner_parallax_on_off" class="settings"></div>
+<div id="menuOpened" class="settings"></div>
+<div id="banner_fade_in" class="settings"></div>
+
+<!-- theme by http://www.multithemes.com -->
+</body>
+</html>

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml">
+ <head>
+
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+   
+	
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="robots" content="index, follow" />
+		<meta name="generator" content="RapidWeaver" />
+		<link rel="icon" href="https://jeditekunum.github.io/favicon.ico" type="image/x-icon" />
+		<link rel="shortcut icon" href="https://jeditekunum.github.io/favicon.ico" type="image/x-icon" />
+		<!-- User defined head content such as meta tags and encoding options -->
+	<title>Automating Ceiling Fans | Jedi Tek'Unum</title>
+	
+	<!-- Google's Font service -->		
+	<link href='https://fonts.googleapis.com/css?family=Raleway:400|Ruluko|Open%20Sans%20Condensed:300|Bree%20Serif|?rwcache=625693128' rel='stylesheet' type='text/css'>  
+	<!-- Awesome Font - Icons -->  
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css"> 
+		   		   
+	<link rel="stylesheet" type="text/css" media="all" href="https://jeditekunum.github.io/rw_common/themes/lander/consolidated.css" />
+		
+	
+	
+	<!-- Style variations - these are set up in the theme.plist -->
+	<!-- User defined styles -->
+			
+	 <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> -->
+	 <!-- jquery 1.11.0 embedded -->
+	 <script type="text/javascript" src="https://jeditekunum.github.io/rw_common/themes/lander/js/jquery.min.js"></script>	  
+     <script type="text/javascript" src="https://jeditekunum.github.io/rw_common/themes/lander/javascript.js"></script>
+	 <script type="text/javascript" src="https://jeditekunum.github.io/rw_common/themes/lander/js/box.js"></script>
+	 <script type="text/javascript" src="https://jeditekunum.github.io/rw_common/themes/lander/js/multithemes.js"></script> 
+	 
+	<!-- User defined javascript -->
+	
+	
+	
+</head>
+	
+<!-- This page was created with RapidWeaver from Realmac Software. http://www.realmacsoftware.com -->
+
+<body>
+<div id="container"><!-- Start container -->	 
+<!--box trigger-->
+<div id="drop" class="togglebox">
+    <i class="fa fa-plus-square-o"></i>
+  </div>
+<div class="clearer"></div>
+ <!--drop nav --> 
+  <div id="accordion"><!-- BOX-->	 
+     <div id="navcontainer_box">
+     <div id="navcontainer_opacity"></div>
+       <div id="navcontainer"><ul><li><a href="../../../" rel="">Home</a></li><li><a href="../../../Articles/" rel="" class="currentAncestor parent">Articles</a><ul><li><a href="../../../Articles/2018/" rel="" class="parent">2018</a><ul><li><a href="../../../Articles/2018/SX1509-Adapter-Adapter/" rel="">SX1509 Adapter Adapter</a></li><li><a href="../../../Articles/2018/Isolated-8-IO-Adapter-Elexol/" rel="">Isolated 8 I/O Adapter for Elexol et al.</a></li><li><a href="../../../Articles/2018/Standard-Connector-for-I2C/" rel="">Standard Connector for I2C</a></li><li><a href="../../../Articles/2018/NanoPi-NEO-Adapter-V3/" rel="">NanoPi NEO Adapter V3</a></li><li><a href="../../../Articles/2018/I2C-Multiplexer-4-V2/" rel="">I2C Multiplexer 4 V2</a></li><li><a href="../../../Articles/2018/SX1509-Isolated-32-SF-V1/" rel="">SX1509 Isolated 32 SF V1</a></li><li><a href="../../../Articles/2018/Advanced-Central-Switch-Interface/" rel="">Advanced Central Switch Interface</a></li></ul></li><li><a href="../../../Articles/2017/" rel="" class="currentAncestor parent">2017</a><ul><li><a href="./" rel="" id="current">Automating Ceiling Fans</a></li><li><a href="../../../Articles/2017/Automating-Ceiling-Fans-V2/" rel="">Automating Ceiling Fans V2</a></li></ul></li></ul></li><li><a href="../../../offsite/github.html" rel="">Github</a></li><li><a href="../../../sitemap/" rel="">Sitemap</a></li></ul></div>
+      </div>
+    </div><!-- BOX END--> 
+   <div class="clearer"></div>    
+  <div id="headerbox">  
+   <div id="rw-banner-image"> </div>    
+    <div id="banner_grid"></div>        
+      <div id="pageHeader"><!-- Start page header -->
+     <div id="logo"><a href="https://jeditekunum.github.io/"></a></div>
+	  <div id="fade_titles">	
+	   <h1>Jedi Tek'Unum</h1>
+	   <h2>Adventures in Technology</h2></div>
+    </div><!-- End page header -->        
+  <div id="breadcrumbcontainer_box">  
+    <div id="opacity_background"></div>
+     <div id="breadcrumbcontainer">   
+        
+      </div><!-- End breadcrumb -->
+    </div><!-- End breadcrumbcontainer_box -->  
+  </div><!-- End headerbox-->     
+ <div id="global_width">	 	
+	 <div id="contentContainer"><!-- Start main content wrapper -->
+		 <div id="content"><!-- Start content -->
+		   <h1>Automating Ceiling Fans</h1>
+<h6>February 2017</h6>
+<br>
+<span style="color:red"><b>Update: There is a new version of this article with an improved design: <a href="../Automating-Ceiling-Fans-V2">Automating Ceiling Fans V2</a></b></span>
+<br><br><br>
+
+<h4><i><u>WARNING:</u></i></h4>
+<p>
+<i>The following information may not be useful for those with limited experience with electronics and electricity. This is a DIY oriented article but requires basic soldering skills and familiarity with electronics. Most importantly, if you are not experienced with working with 120V AC mains power you should not proceed due to the <b><u>potentially lethal voltages</u></b> involved! If you choose to proceed with using any of the information presented here, the author accepts no responsibility for your use - or misuse. Proceed with caution.</i>
+
+<h2>History</h2>
+<p>
+Ceiling fans seem to be resistant to automation. There are very few products and they are proprietary to packaged (and expensive) automation systems or otherwise require a specific type of interface (Insteon for example). If your automation system doesn't natively support one of those methods you have limited choices. Of course it is possible to construct software and/or hardware to integrate foreign interfaces. In the end the result is limited to the reliability of the weakest link. This author has used Insteon ceiling fans as part of a larger Insteon setup with mostly good results. But in constructing a new home a better system was chosen.
+<p>
+Other approaches:
+<ul>
+	<li>It is a bit shocking how much advice exists suggesting the use of typical home dimmers utilizing leading-edge (TRIAC) dimming technology. That approach is simply inappropriate. AC electricity is not like a water faucet where varying the flow for a one type of device works just as well for another type of device. Besides an unpleasant hum it is probably dangerous.<br><br>
+	<li>Replace the speed select switches (pull chain, for example) with relays. This is a perfectly acceptable approach if it works for a specific fan. By that I mean that the switch wiring is usually below the fan motor and there is no way to pass additional control wires through the fan motor to the other side. This makes the approach impractical in most cases because there simply isn't enough room in the housing below the fan to add wireless circuitry. As we will see, even fan manufactures do not add controls below the motor.<br><br>
+	<li>Modify commercial/proprietary "remote" controls - either wireless or installed in a wall box. The result will have a reliability similar to Insteon<br><br>
+	<li>Implement a custom solution. This is the approach to be discussed in this article. I am aware of one instance of this in the past - <a href="http://www.edcheung.com/automa/nohum.htm">No Hum Fan Speed Controller</a> - that was an inspiration for this project.
+</ul>
+
+<h2>Requirements</h2>
+<p>
+The following requirements have led to the design presented here:
+<ul>
+	<li>Ability to control the speed of AC ceiling fans
+	<li>Adaptable to different fans as much as possible using a variety of components
+	<li>As many as 3 speeds in addition to full on
+	<li>Isolate AC voltage from control circuit
+	<li>Flexible control interface - simple relay or open collector at minimum
+	<li>Optional control via 0-10VDC
+</ul>
+
+<h2>Anatomy of a Ceiling Fan</h2>
+<p>
+Having owned Hunter ceiling fans for many years I chose to stick with what I was familiar with. It is likely that other brands are very similar.
+<p>
+The basic design has been around for a long time. While some newer models are only available with remote control they are simply the old design with a smarter control module added. The remote receiver module connects in exactly the same way as Insteon or other third-party controls.
+<p>
+The dissection presented here is for the <b>Hunter 49244 White 44" 4-Blade Remote Control with LED Lights</b>
+<br><br>
+<img src="../../../resources/Articles/2017/Automating-Ceiling-Fans/images/HunterDempseyLowProfileLight44-1.png">
+<br><br>
+
+<h3>Remote Control</h3>
+<br>
+<img src="../../../resources/Articles/2017/Automating-Ceiling-Fans/images/IMG_0108.JPG">
+<br><br>
+
+<h3>Top of Fan</h3>
+<p>
+There are 4 wires.
+<ul><li>Green - ground
+<li>White - neutral
+<li>Black - fan hot
+<li>Blue - light hot
+</ul>
+<br>
+<img src="../../..../../../resources/Articles/2017/Automating-Ceiling-Fans/images/IMG_0115.JPG">
+<br><br>
+
+<h3>Top of Motor</h3>
+<p>
+Same wires minus the ground.
+<br><br>
+<img src="../../../resources/Articles/2017/Automating-Ceiling-Fans/images/IMG_0116.JPG">
+<br><br>
+
+<h3>Bottom of Motor</h3>
+<p>
+Wires from the top and wires to the motor windings. The upper plate details are shown in the next section.
+<br><br>
+<img src="../../../resources/Articles/2017/Automating-Ceiling-Fans/images/IMG_0111.JPG">
+<br><br>￼
+
+<h3>Light Plate</h3>
+<p>
+The version without lights probably looks very similar to this minus the bulb wiring. The block at the bottom labelled CBB61 is the capacitor for the start winding; do <b>not</b> remove it.
+<p>
+We also find the reversing switch here which means we can't automate the direction with more control wires. There is enough room here that a wireless circuit and relay could be retrofitted but thats another project!
+<p>
+<i>If one chose to not use the lights that wire could be used to control a relay for direction.</i>
+<br><br>
+￼<img src="../../../resources/Articles/2017/Automating-Ceiling-Fans/images/IMG_0095.JPG">
+<br><br>
+<img src="../../../resources/Articles/2017/Automating-Ceiling-Fans/images/IMG_0110.JPG">
+<br><br>
+￼
+<h2>Measuring</h2>
+<p>
+<span style="color:red"><b>Be careful with high voltages!</b></span>
+<p>
+I used a Kill-A-Watt meter to measure the wattage for the factory config.
+<p>
+<table width="30%">
+	<tr><td>Off</td><td>2-3W</td></tr>
+	<tr><td>Light only</td><td>6W</td></tr>
+	<tr><td>Low fan only</td><td>13W</td></tr>
+	<tr><td>Medium fan only  </td><td>30W</td></tr>
+	<tr><td>High fan only</td><td>63W</td></tr>
+</table>
+<br>
+<h2>Selecting New Control Components</h2>
+<p>
+<span style="color:red"><b>Be careful with high voltages!</b></span>
+<p>
+The normal method of controlling the speed of this type of motor is inserting a capacitor between the mains hot and the fan. Disassembling the factory control reveals a pair of large capacitors rated at 5uF and 250VAC. This gives a good place to start experimenting with values. In fact, 5-10uF is pretty typical for ceiling fans.
+<p>
+I removed the factory remote control and experimented with the following values using appropriately-rated film capacitors:
+<p>
+<table width="30%">
+	<tr><td>4.7uF</td><td>9W</td></tr>
+	<tr><td>6.8uF</td><td>16W</td></tr>
+	<tr><td>10uF</td><td>27W</td></tr>
+	<tr><td>12.2uF</td><td>34W</td></tr>
+</table>
+<p>
+These results confirm that the factory controller is using 5uF and 10uF for low and medium speeds. (Recall that parallel capacitors are additive.)
+<p>
+It is likely that the minimum factory speed is required to ensure that the motor can start so 10W/5uF will be our minimum. These results don't indicate what the maximum capacitance should be. Further experimentation would be needed if one was interested in a speed somewhere between 30W and 60W. Be cautious that too large a value could cause issues.
+<p>
+<u>If using a different brand of fan it is recommended a similar approach be used to determine the appropriate values.</u>
+<p>
+Capacitors designed specifically for ceiling fan applications are readily available (eBay) in a variety of values. These are of the appropriate type and rating for safe usage in 120VAC circuits. Most of these come with wires attached. For example
+<br><br>
+<img src="../../../resources/Articles/2017/Automating-Ceiling-Fans/images/IMG_0151x.JPG">
+<br>
+<p>
+If you know what you are doing and are willing to accept all responsibility for your choice, PCB mounted capacitors are available as well. For example, TDK B32794 series are available from Digi-Key with rating of 300VAC. Be aware that 120V is RMS and not peak voltage (which is ~180V) and it is common practice to use ratings significantly above actual operating levels. Stick with at least 300VAC. Also note that it is <b>very</b> important to realize that AC ratings are quite different from DC ratings. Lesser capacitors often come with DC only ratings. Those that are rated for both have DC values much higher than AC. For example, the TDK parts mentioned are rated for 300VAC and 700VDC. Know what you are doing - you don't want a fire!
+<p>
+At this point one could simply arrange some relays to switch in the appropriate capacitor(s).
+
+<h2>Custom Ceiling Fan Control</h2>
+<p>
+<span style="color:red"><b>Be careful with high voltages!</b></span>
+<p>
+I have designed a circuit and board that allows an automation system to switch in one or more capacitors to control fan speed. You may build one yourself. I've shared the PCB on OSHPark so you can order the PCB directly from them.
+<br><br>
+<a href="../../../resources/Articles/2017/Automating-Ceiling-Fans/FanSpeedControlSch.pdf"><img src="../../../resources/Articles/2017/Automating-Ceiling-Fans/images/FanSpeedControlSch.png"></a>
+<br>
+<p>
+The result looks something like this:
+<br><br>
+<img src="../../../resources/Articles/2017/Automating-Ceiling-Fans/images/IMG_0151_ControlOnly.JPG">
+￼<br>
+<p>
+The green frame is a DIN mounting carrier. The card is 72mm high and 100mm wide. AC line is connected at the top to the left. The fan is connected at the top to the right. The inner screws are connected together if you want to run your neutral through the board. Grounds must be joined elsewhere. The automation system connects at the bottom.
+<p>
+This is the first "production" board that I will actually install. It is configured for 3 speeds. The empty area around the "3"s could be populated if 4 speeds are desired. Note the multiple holes at both ends of the capacitor area to accommodate different physical sizes. The large pair of holes with lots of copper are for wired fan capacitors discussed earlier.
+<p>
+Instead of relays this design uses SSR (Solid State Relays). They use optical coupling and are therefore isolated.
+<p>
+LEDs and resistors are provided if visual indication is desired.
+<p>
+The resistor values are not specified in the schematic nor are the SSRs. You may use whatever values are appropriate for your situation. In my case I will be connecting to a 12V board so the SSRs are 12V (part G3MC-202P-VD).
+<p>
+To control the board I will connect a 12V power source and pull one or more of pins 2-4 to ground. I've used 2 5uF capacitors so I intend to pull pin 1 for low, pins 1 and 2 for medium, and pin 4 for high.
+<p>
+The PCB is available from <a href="https://oshpark.com/shared_projects/bvDuAplR">OSHPark</a>.
+
+<h2>Custom Ceiling Fan Adapter</h2>
+<p>
+If you need to integrate the controller above with a 0-10VDC (sourcing) interface such as Loxone, read on.
+<p>
+I have designed a circuit and board that adapts the controller above to 0-10VDC control. You may build one yourself. I've shared the PCB on OSHPark so you can order the PCB directly from them.
+<br><br>
+<a href="../../../resources/Articles/2017/Automating-Ceiling-Fans/FanSpeedAdapterSch.pdf"><img src="../../../resources/Articles/2017/Automating-Ceiling-Fans/images/FanSpeedAdapterSch.png"></a>
+<br>
+<p>
+The result looks something like this:
+<br><br>
+<img src="../../../resources/Articles/2017/Automating-Ceiling-Fans/images/IMG_0151_Adapter.JPG">
+<br>
+<p>
+￼The green frame is a DIN mounting carrier. The card is 72mm high and 47mm wide. The controller is attached at the top. The automation system connects at the bottom via ground, 0-10VDC, and + supply.
+<p>
+Due to the design of the circuit, it requires 12V or greater. You may supply regulated 12VDC directly and jumper the on-board regulator (and don't populate the regulator parts) or you can populate the the regulator parts and supply 13-24VDC. If you use a 7812 regulator be aware that depending on the rest of your choices (ie SSRs and resistors) the load may cause the regulator to become hot. If that is the situation you need to either put a heatsink on the regulator or use a drop-in replacement converter such as Traco TSR 1-24120. My 7812 is too hot so I will be replacing it with a Traco.
+<p>
+There are 4 other jumpers on the board for the following:
+<ul>
+	<li>3SPD - when present there are only 3 speeds possible instead of 4. Speeds 2 & 3 are shorted together.
+	<li>LO EN - enable lowest. Without this jumper voltages below ~1V are ignored.
+	<li>HI EN - enable highest. Without this jumper voltages above ~9V are ignored if ACCUM jumper is not in place.
+	<li>ACCUM - accumulate. Without this jumper only 1 output is selected based on driving voltage. That is, ~4.5V will activate pin 2 but not pin 1. With this jumper any output at or below the driving voltage is activated. That is, ~4.5V will activate pin 1 and pin 2.
+</ul>
+It is possible to completely isolate the output by not connecting anything to pin 6 and breaking the ground trace near the output connector (do not break the line to the chip near the connector!).
+<p>
+The PCB is available directly from <a href="https://oshpark.com/shared_projects/pPzKl6kx">OSHPark</a>.
+
+		 </div><!-- End content -->
+	 </div><!-- End main content wrapper -->
+  <div id="sidebarBackground"></div>
+<div id="sidebarContainer"><!-- Start Sidebar wrapper -->
+  <div class="sideHeader"></div><!-- Sidebar header -->
+	 <div id="sidebar"><!-- Start sidebar content -->
+	  <!-- sidebar content such as the blog archive links -->
+	 <div class="clearer"></div>
+		<!-- sidebar content you enter in the page inspector -->		
+     </div><!-- End sidebar content -->
+   </div><!-- End sidebar wrapper -->
+ </div><!-- global_width -->
+<div class="clearer"></div>	
+  <div id="footer"><!-- Start Footer -->
+   <div class="footer_breadcrumbcontainer"> </div>
+	  <p>&copy; 2017-2021 Jedi Tek'Unum <a href="#" id="rw_email_contact">Contact Me</a><script type="text/javascript">var _rwObsfuscatedHref0 = "mai";var _rwObsfuscatedHref1 = "lto";var _rwObsfuscatedHref2 = ":we";var _rwObsfuscatedHref3 = "bma";var _rwObsfuscatedHref4 = "ste";var _rwObsfuscatedHref5 = "r@j";var _rwObsfuscatedHref6 = "edi";var _rwObsfuscatedHref7 = "tek";var _rwObsfuscatedHref8 = "unu";var _rwObsfuscatedHref9 = "m.c";var _rwObsfuscatedHref10 = "om";var _rwObsfuscatedHref = _rwObsfuscatedHref0+_rwObsfuscatedHref1+_rwObsfuscatedHref2+_rwObsfuscatedHref3+_rwObsfuscatedHref4+_rwObsfuscatedHref5+_rwObsfuscatedHref6+_rwObsfuscatedHref7+_rwObsfuscatedHref8+_rwObsfuscatedHref9+_rwObsfuscatedHref10; document.getElementById("rw_email_contact").href = _rwObsfuscatedHref;</script></p>
+  </div><!-- End Footer -->
+</div><!-- End container -->
+
+ <div id="up"><a href="#up"><span><i class="fa fa-angle-up"></i></span></a></div>
+
+<!-- trigger options in multithemes.js -->
+<div id="banner_parallax_on_off" class="settings"></div>
+<div id="menuOpened" class="settings"></div>
+<div id="banner_fade_in" class="settings"></div>
+
+<!-- theme by http://www.multithemes.com -->
+</body>
+</html>
